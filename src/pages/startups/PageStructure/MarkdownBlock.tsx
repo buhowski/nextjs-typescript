@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect, useRef, useCallback, memo, Children } from 'react';
 import ReactMarkdown, { Components } from 'react-markdown';
 

@@ -41,7 +41,14 @@ const isYouTubeUrl = (url?: string) => {
 		/^(https?:\/\/)?(www\.youtube\.com\/embed\/|youtu\.be\/|www\.youtube-nocookie\.com\/embed\/)[\w-]{11}(\?.*)?$/;
 	return youtubeRegex.test(url);
 };
-const isDirectVideoFile = (url?: string) => url?.match(/\.(mp4|webm|ogg)$/i);
+
+// function to handle StaticImageData objects
+const isDirectVideoFile = (itemSrc: string | any) => {
+	if (typeof itemSrc === 'object' && itemSrc !== null && itemSrc.src) {
+		return itemSrc.src.match(/\.(mp4|webm|ogg)$/i);
+	}
+	return typeof itemSrc === 'string' ? itemSrc.match(/\.(mp4|webm|ogg)$/i) : false;
+};
 
 // VideoPreview component (remains the same)
 const VideoPreview: React.FC<VideoPreviewProps> = ({

@@ -1,15 +1,26 @@
+'use client';
+
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { startupsNav } from '../../../components/urlsData';
 
 const StartupNavigation: React.FC = () => {
+	const pathname = usePathname();
+
 	return (
 		<div className='idea-tabs idea-tabs--urls'>
 			{startupsNav.map(({ pageLink, pageName }, index) => {
+				const isActive = pathname === pageLink;
+
 				return (
-					<NavLink to={pageLink} className={`idea-tabs__btn`} key={index}>
+					<Link
+						href={pageLink}
+						className={`idea-tabs__btn ${isActive ? 'active' : ''}`}
+						key={index}
+					>
 						{pageName}
-					</NavLink>
+					</Link>
 				);
 			})}
 		</div>
