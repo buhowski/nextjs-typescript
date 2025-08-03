@@ -1,26 +1,78 @@
-// Import your global styles from the new src/styles folder.
 import '../styles/App.scss';
-// The preloader logic and helmet context should be handled in a client component.
 import { PreloaderWrapper } from '@/components/PreloaderWrapper';
-// Import your Header component.
+import PageTransitionWrapper from '@/components/PageTransitionWrapper';
 import Header from '@/components/header/Header';
 
 // Set your global metadata here, replacing the old PageHelmet.
 export const metadata = {
-	title: 'Your Site Title',
-	description: 'Your site description.',
+	title: 'Olexander Tsiomakh: Developer | Explorer | Creator',
+	description:
+		'Building awesome products and contributing useful solutions to the world. Based on Planet Earth, Solar System.',
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			noimageindex: true,
+			'max-video-preview': -1,
+			'max-image-preview': 'large',
+			'max-snippet': -1,
+		},
+	},
+	themeColor: '#202020',
+	openGraph: {
+		title: 'Developer | Explorer | Creator',
+		description:
+			'Building awesome products and contributing useful solutions to the world. Based on Planet Earth, Solar System.',
+		url: 'https://buhowski.dev/',
+		siteName: 'Olexander Tsiomakh',
+		images: [
+			{
+				url: 'https://buhowski.dev/screenshot.png',
+				width: 1280,
+				height: 640,
+				alt: 'Olexander Tsiomakh',
+			},
+		],
+		locale: 'en_US',
+		type: 'website',
+	},
+	twitter: {
+		card: 'summary_large_image',
+		title: 'Developer | Explorer | Creator',
+		description:
+			'Building awesome products and contributing useful solutions to the world. Based on Planet Earth, Solar System.',
+		creator: '@buhowski',
+		site: '@buhowski',
+		images: ['https://buhowski.dev/screenshot.png'],
+	},
+	authors: [{ name: 'Olexander Tsiomakh' }],
+	keywords: [
+		'Olexander Tsiomakh',
+		'Цьомах Олександр Віталійович',
+		'Design',
+		'Develop',
+		'Startups',
+		'buhowski',
+	],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang='en'>
 			<body>
-				<div id='page' className='page'>
-					<div className='page-container'>
-						<Header />
-						{children}
+				<PreloaderWrapper />
+
+				<PageTransitionWrapper>
+					<div id='page' className='page'>
+						<div className='page-container'>
+							<Header />
+
+							{children}
+						</div>
 					</div>
-				</div>
+				</PageTransitionWrapper>
 			</body>
 		</html>
 	);

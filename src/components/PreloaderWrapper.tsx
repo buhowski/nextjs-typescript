@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import Preloader from './Preloader';
 
-export const PreloaderWrapper = ({ children }: { children: React.ReactNode }) => {
+export const PreloaderWrapper = () => {
 	const [showPreloader, setShowPreloader] = useState(true);
 
 	useEffect(() => {
@@ -17,11 +17,5 @@ export const PreloaderWrapper = ({ children }: { children: React.ReactNode }) =>
 		};
 	}, []);
 
-	return (
-		<>
-			{showPreloader && <Preloader />}
-
-			{children}
-		</>
-	);
+	return showPreloader && <Preloader />;
 };
