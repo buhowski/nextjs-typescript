@@ -1,14 +1,10 @@
+'use client';
+
 import Masonry from 'react-responsive-masonry';
-import { ResponsiveMasonry as ResponsiveMasonryBase } from 'react-responsive-masonry';
+import { ResponsiveMasonry } from 'react-responsive-masonry';
 import projectsData from './projectsData';
 
 import './Projects.scss';
-
-// Type assertions to fix JSX component typing issues
-const ResponsiveMasonry = ResponsiveMasonryBase as unknown as React.FC<
-	React.PropsWithChildren<any>
->;
-const MasonryTyped = Masonry as unknown as React.FC<React.PropsWithChildren<any>>;
 
 const Projects = () => {
 	return (
@@ -16,12 +12,12 @@ const Projects = () => {
 			<h1 className='base-title h1'>Some Works</h1>
 			<div className='projects-container'>
 				<ResponsiveMasonry columnsCountBreakPoints={{ 320: 1, 666: 2, 1024: 3, 1281: 5 }}>
-					<MasonryTyped itemStyle={{ gap: '40px' }} className='projects-container__masonry'>
+					<Masonry itemStyle={{ gap: '40px' }} className='projects-container__masonry'>
 						{projectsData.map(({ img, url, urlCode, name, description, skills, alt }, i) => {
 							return (
 								<div className='project' key={i}>
 									<a className='project-link' href={url} target='_blank' rel='noopener noreferrer'>
-										<img className='project-link__img' src={img} alt={alt} />
+										<img className='project-link__img' src={img.src} alt={alt} />
 									</a>
 
 									{skills || description ? (
@@ -69,7 +65,7 @@ const Projects = () => {
 								</div>
 							);
 						})}
-					</MasonryTyped>
+					</Masonry>
 				</ResponsiveMasonry>
 			</div>
 		</div>

@@ -2,7 +2,6 @@
 'use client';
 
 import React from 'react';
-// import { NavLink, useLocation } from 'react-router-dom';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 

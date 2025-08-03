@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { useTabletLargeQuery } from '../../../config/useMediaQuery';
 import { LANGUAGES, getInitialLanguage } from '../helpers/languageHelpers';

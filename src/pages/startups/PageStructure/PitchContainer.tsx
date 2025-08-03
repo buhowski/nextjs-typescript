@@ -1,5 +1,7 @@
+'use client';
+
 import React, { forwardRef, useCallback, useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import Link from 'next/link';
 import MarkdownBlock from './MarkdownBlock';
 import { PitchContainerProps } from '../../../types/common';
 
@@ -49,9 +51,9 @@ const PitchContainer = React.memo(
 					{/* Render "read more" link if a filmsPreviewUrl is provided */}
 					{structure.filmsPreviewUrl && (
 						<div className='idea-block__action'>
-							<NavLink to={structure.filmsPreviewUrl} className='idea-block__more'>
+							<Link href={structure.filmsPreviewUrl} className='idea-block__more'>
 								<span>read more</span>
-							</NavLink>
+							</Link>
 						</div>
 					)}
 				</div>

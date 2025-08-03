@@ -28,7 +28,7 @@ const About = () => {
 				<div className=''>
 					<img
 						className='about-info__img'
-						src={PhotoBg}
+						src={PhotoBg.src}
 						alt='Portrait of Tsiomakh Olexandr (Цьомах Олександр Віталійович) standing and looking forward, symbolizing a better future'
 					/>
 				</div>
@@ -49,7 +49,7 @@ const About = () => {
 									{title}
 								</p>
 
-								<img className='line-drawing-pic' src={img} alt={alt} />
+								<img className='line-drawing-pic' src={img.src} alt={alt} />
 							</div>
 						</div>
 					);
