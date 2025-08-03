@@ -1,0 +1,125 @@
+@import '../../styles/variables';
+
+.home-wrapper {
+	min-height: calc(100% - 90px);
+	height: auto;
+	display: flex;
+
+	@include tablet {
+		min-height: calc(100% - 80px);
+	}
+
+	@include tabletSmall {
+		flex-direction: column;
+		justify-content: space-between;
+	}
+}
+
+.name-container {
+	align-self: center;
+	margin-bottom: 125px;
+	width: 40%;
+
+	@media screen and (max-width: 1366px) {
+		margin-bottom: 70px;
+	}
+
+	@include tablet {
+		margin-bottom: 30px;
+	}
+
+	@include tabletSmall {
+		width: 100%;
+		margin-bottom: 5px;
+		margin-top: 30px;
+	}
+
+	// .name-container__title
+	&__title {
+		font-size: 80px;
+		font-size: clamp(64px, 5vw, 98px);
+		margin-bottom: min(5vh, 60px);
+
+		@include tabletSmall {
+			font-size: 44px;
+			margin-bottom: 30px;
+		}
+
+		span {
+			display: block;
+		}
+	}
+
+	// ..name-container__position
+	&__position {
+		font-size: 26px;
+		font-size: clamp(26px, 1.6vw, 40px);
+		margin-bottom: min(6.6vh, 70px);
+		font-family: $LouisGeorgeCaf;
+		letter-spacing: 3px;
+		white-space: nowrap;
+		color: $blue-main;
+
+		@include tabletSmall {
+			font-size: 23px;
+			margin-bottom: 35px;
+		}
+	}
+}
+
+// Photo drawing | drawCanvas |
+.photoContainer,
+.drawCanvas,
+.illustrationImage,
+canvas {
+	width: 100%;
+}
+
+.photoContainer {
+	margin: 0 auto;
+	align-self: flex-end;
+	width: 59%;
+
+	@include heightTopMax {
+		width: 55%;
+	}
+
+	@include heightTopMin {
+		width: 52%;
+	}
+
+	@include heightTopMinMax {
+		width: 48%;
+	}
+
+	@include tabletSmall {
+		width: calc(100% + 20px);
+		margin-left: -10px;
+		margin-top: 30px;
+	}
+
+	canvas {
+		will-change: transform, opacity;
+	}
+}
+
+.drawCanvas {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top;
+	padding-bottom: 82.6%;
+	position: relative;
+	filter: drop-shadow(0 0 5px rgba($color: $darkest, $alpha: 0.8));
+	overflow: hidden;
+
+	canvas,
+	.illustrationImage {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.illustrationImage {
+		left: -130%;
+	}
+}
