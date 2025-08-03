@@ -3,8 +3,8 @@ import witcherPoster from '../../../assets/games/witcherPoster.webp';
 import samuraiPoster from '../../../assets/games/samuraiPoster.webp';
 
 // Videos
-import ghostOfTsushimaTrailer from '../../../assets/games/videos/ghostOfTsushimaTrailer.mp4';
-import witcherTrailer from '../../../assets/games/videos/witcherTrailer.mp4';
+const ghostOfTsushimaTrailer = '/videos/ghostOfTsushimaTrailer.mp4';
+const witcherTrailer = '/videos/witcherTrailer.mp4';
 
 // Images
 import cossacksPoster from '../../../assets/games/cossacksPoster.webp';

@@ -7,6 +7,8 @@ import { playIcon } from '../pages/startups/assets/svg/playIcon';
 import { SliderProps, VideoPreviewProps } from '../types/common';
 import { useVideoPlayback } from '../pages/startups/helpers/VideoPlaybackContext'; // Import the new hook
 
+import Image from 'next/image';
+
 // Helper function to detect iOS mobile devices
 const isMobileDevice = (): boolean => {
 	if (typeof navigator === 'undefined') {
@@ -58,7 +60,7 @@ const VideoPreview: React.FC<VideoPreviewProps> = ({
 	onClick,
 }) => (
 	<div className='video-preview' onClick={onClick}>
-		{itemPoster && <img src={itemPoster} alt={itemAlt} />}
+		{itemPoster && <Image src={itemPoster} alt={itemAlt} fill />}
 
 		{playIcon}
 
@@ -222,7 +224,7 @@ const Slider: React.FC<SliderProps> = ({ slides, currentLanguage }) => {
 								)
 							) : (
 								<>
-									<img src={currentSlide.itemSrc} alt={currentSlide.itemAlt} />
+									<Image src={currentSlide.itemSrc} alt={currentSlide.itemAlt} fill />
 
 									{currentSlide.putImgTitle && (
 										<p className='video-preview__title'>{currentSlide.itemCaption}</p>

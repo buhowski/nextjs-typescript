@@ -5,9 +5,9 @@ import fantasyPoster from '../../../assets/films/EuropeanUkrainians/fantasyPoste
 import bestMomentsPoster from '../../../assets/films/EuropeanUkrainians/always-sunny-the-gang.webp';
 
 // Videos
-import promoVideo from '../../../assets/films/videos/teaserVideo.mp4';
-import broadCityTrailer from '../../../assets/films/videos/broadCityTrailer.mp4';
-import fantasy from '../../../assets/films/videos/fantasy.mp4';
+const promoVideo = '/videos/teaserVideo.mp4';
+const broadCityTrailer = '/videos/broadCityTrailer.mp4';
+const fantasy = '/videos/fantasy.mp4';
 const bestMomentsVideo = 'https://www.youtube-nocookie.com/embed/cbSEr1oJ8mw';
 
 export const dataSliderEuropeanUkrainians = [
