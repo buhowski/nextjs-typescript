@@ -51,6 +51,7 @@ body {
 	user-select: none;
 	overflow: hidden;
 	-webkit-font-smoothing: antialiased;
+	position: relative;
 
 	@include tablet {
 		height: 100dvh;
